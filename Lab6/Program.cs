@@ -2,15 +2,6 @@
 using System.Net;
 using Lab6;
 
-struct Weather
-{
-    public string Country {  get; set; }
-    public string Name { get; set; }
-    public double Temp { get; set; }
-    public string Discription {  get; set; }
-   
-
-}
 
 namespace lab6
 {
@@ -19,12 +10,12 @@ namespace lab6
         static void Main(string[] args)
         {         
 
-            List<Weather> weatherData = new List<Weather>();
+            List<Weather> weathers = new List<Weather>();
 
             Random random = new Random();
 
-            int count = 0;
-            //while (count < 50)
+            int n = 0;
+           // while (n< 50)
             {
                 double latitude= -90+random.NextDouble()*(90+90);
                 double longitude = -180 + random.NextDouble() * (180 + 180);
@@ -42,11 +33,23 @@ namespace lab6
                     response = streamReader.ReadToEnd();
                     //обрабатываем json в сущность с#, дисереализуем строку и превращаем в объект
                 }
-                WeatherResponce weatherResponce=JsonConvert.DeserializeObject<WeatherResponce>(response);
-                Console.WriteLine($"Temperature in {weatherResponce.Name}: {weatherResponce.main.Temp}");
-                count++;
+                WeatherResponce weatherResponse=JsonConvert.DeserializeObject<WeatherResponce>(response);
+                //Console.WriteLine($"Temperature in {weatherResponse.Name}: {weatherResponse.main.Temp}");
+
+                if  (weatherResponse.Name != "" || weatherResponse.sys.Country != "")
+                {
+                    Weather weather = new Weather(weatherResponse);
+                    weathers.Add(weather);
+                    Console.WriteLine($"Temperature in {weather.Name}: {weather.Temp}");
+                    n++;
+
+                }                    
+                
             }
+            Console.WriteLine();
 
         }
+
     }
+   
 }

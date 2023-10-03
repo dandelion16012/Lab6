@@ -8,9 +8,10 @@ namespace Lab6
 {
     internal class WeatherResponce 
     {
+        public string Name { get; set; }
         public TemperatureInfo main {  get; set; }
-        public string Name {  get; set; }
-        public WeatherResponce() { }
+        public CountryInfo sys { get; set; }
+        public  DescriptionInfo weather { get; set; }
 
     }
 }
