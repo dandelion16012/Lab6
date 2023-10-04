@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace Lab6
 {
 
-    internal class DescriptionInfo
+    public class DescriptionInfo
     {
-        public DescriptionInfo() { }
+        
         public string Description { get; set; }
 
     }

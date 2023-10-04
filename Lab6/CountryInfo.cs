@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Lab6
 {
-    internal class CountryInfo
+    public class CountryInfo
     {
-        public CountryInfo() { }
+        
         public string Country { get; set; }
     }
 }

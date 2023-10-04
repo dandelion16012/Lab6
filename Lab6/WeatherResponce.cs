@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Lab6
 {
-    internal class WeatherResponce 
+    public class WeatherResponce 
     {
         public string Name { get; set; }
         public TemperatureInfo main {  get; set; }
         public CountryInfo sys { get; set; }
-        public  DescriptionInfo weather { get; set; }
+        public DescriptionInfo [] weather { get; set; }
 
     }
 }

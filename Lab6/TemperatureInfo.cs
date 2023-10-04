@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Lab6
 {
-    internal class TemperatureInfo
+    public class TemperatureInfo
     {
         public float Temp {  get; set; }
-        public TemperatureInfo() { }
+        
     }
 }

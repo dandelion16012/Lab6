@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Lab6
 {
 
-    internal struct Weather
+    public struct Weather
     {
         public string Country { get; set; }
         public string Name { get; set; }
@@ -20,7 +20,7 @@ namespace Lab6
             this.Country=weatherResponce.sys.Country;
             this.Name = weatherResponce.Name;
             this.Temp= weatherResponce.main.Temp;
-            this.Description = weatherResponce.weather.Description;
+            this.Description = weatherResponce.weather[0].Description;
             
         }
 
